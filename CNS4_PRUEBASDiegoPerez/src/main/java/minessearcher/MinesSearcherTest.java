@@ -14,4 +14,15 @@ public class MinesSearcherTest {
         Assert.assertNotEquals(null, finalMap);
     }
     
+    @Test
+    public void validateFileContainsMatrixSize() {
+        String entryFile = "D:\\prueba1.txt";
+        String[][] finalMap = minesSearcher.processMinesSearcher(entryFile);
+        Assert.assertNotEquals(null, finalMap);
+        Assert.assertEquals(4, finalMap[0].length);
+        Assert.assertEquals(4, finalMap[1].length);
+        Assert.assertEquals(4, finalMap[2].length);
+        Assert.assertEquals(4, finalMap[3].length);
+    }
+    
 }

@@ -12,7 +12,8 @@ public class MinesSearcher {
             String line;
             while((line = in.readLine()) != null)
             {
-                finalMap = new String[1][1];
+                String[] sizesArray = line.split(" ");
+                finalMap = new String[Integer.valueOf(sizesArray[0])][Integer.valueOf(sizesArray[1])];
             }
             in.close();
             return finalMap;
