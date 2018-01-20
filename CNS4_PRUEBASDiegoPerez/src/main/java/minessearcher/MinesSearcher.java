@@ -9,14 +9,29 @@ public class MinesSearcher {
         String[][] finalMap = null;
         try {
             BufferedReader in = new BufferedReader(new FileReader(entryFile));
+            boolean isFirstTime = true;
+            Integer lineCounter = 0;
             String line;
-            while((line = in.readLine()) != null)
-            {
-                String[] sizesArray = line.split(" ");
-                finalMap = new String[Integer.valueOf(sizesArray[0])][Integer.valueOf(sizesArray[1])];
+            String[] arraySize = null;
+            while ((line = in.readLine()) != null) {
+                if (isFirstTime) {
+                    arraySize = line.split(" ");
+                    finalMap = new String[Integer.valueOf(arraySize[0])][Integer.valueOf(arraySize[1])];
+                    isFirstTime= false;
+                    continue;
+                }
+                
+                String[] columnsInLine = line.split("");
+                for (int i = 0; i < columnsInLine.length; i++) {
+                    finalMap[lineCounter][i] = columnsInLine[i];
+                }
+                
+                lineCounter++;
             }
             in.close();
+            
             return finalMap;
+            
         } catch (Exception e) {
             return finalMap;
         }

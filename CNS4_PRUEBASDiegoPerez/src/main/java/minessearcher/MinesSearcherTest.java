@@ -25,4 +25,13 @@ public class MinesSearcherTest {
         Assert.assertEquals(4, finalMap[3].length);
     }
     
+    
+    @Test
+    public void validateFileContainsMines() {
+        String entryFile = "D:\\prueba1.txt";
+        String[][] finalMap = minesSearcher.processMinesSearcher(entryFile);
+        Assert.assertNotEquals(null, finalMap);
+        Assert.assertEquals("*", finalMap[0][0]);
+    }
+    
 }
