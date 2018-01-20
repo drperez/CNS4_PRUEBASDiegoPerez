@@ -35,26 +35,26 @@ public class MinesSearcherTest {
     }
     
     @Test
-    public void testFileContainsMinesAndDotsOnly() {
+    public void testConvertDotsToZero() {
         String entryFile = "D:\\prueba1.txt";
         String[][] finalMap = minesSearcher.processMinesSearcher(entryFile);
         Assert.assertNotEquals(null, finalMap);
         Assert.assertEquals("*", finalMap[0][0]);
-        Assert.assertEquals(".", finalMap[0][1]);
-        Assert.assertEquals(".", finalMap[0][2]);
-        Assert.assertEquals(".", finalMap[0][3]);
-        Assert.assertEquals(".", finalMap[1][0]);
+        Assert.assertEquals("0", finalMap[0][1]);
+        Assert.assertEquals("0", finalMap[0][2]);
+        Assert.assertEquals("0", finalMap[0][3]);
+        Assert.assertEquals("0", finalMap[1][0]);
         Assert.assertEquals("*", finalMap[1][1]);
-        Assert.assertEquals(".", finalMap[1][2]);
-        Assert.assertEquals(".", finalMap[1][3]);
-        Assert.assertEquals(".", finalMap[2][0]);
-        Assert.assertEquals(".", finalMap[2][1]);
-        Assert.assertEquals(".", finalMap[2][2]);
-        Assert.assertEquals(".", finalMap[2][3]);
-        Assert.assertEquals(".", finalMap[3][0]);
-        Assert.assertEquals(".", finalMap[3][1]);
-        Assert.assertEquals(".", finalMap[3][2]);
-        Assert.assertEquals(".", finalMap[3][3]);
+        Assert.assertEquals("0", finalMap[1][2]);
+        Assert.assertEquals("0", finalMap[1][3]);
+        Assert.assertEquals("0", finalMap[2][0]);
+        Assert.assertEquals("0", finalMap[2][1]);
+        Assert.assertEquals("0", finalMap[2][2]);
+        Assert.assertEquals("0", finalMap[2][3]);
+        Assert.assertEquals("0", finalMap[3][0]);
+        Assert.assertEquals("0", finalMap[3][1]);
+        Assert.assertEquals("0", finalMap[3][2]);
+        Assert.assertEquals("0", finalMap[3][3]);
     }
     
 }
