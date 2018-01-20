@@ -10,6 +10,7 @@ public class MinesSearcher {
         try {
             BufferedReader in = new BufferedReader(new FileReader(entryFile));
             boolean isFirstTime = true;
+            boolean onlyMinesAndDots = true;
             Integer lineCounter = 0;
             String line;
             String[] arraySize = null;
@@ -23,6 +24,8 @@ public class MinesSearcher {
                 
                 String[] columnsInLine = line.split("");
                 for (int i = 0; i < columnsInLine.length; i++) {
+                    if (!"*".equals(columnsInLine[i]) && !".".equals(columnsInLine[i]))
+                            onlyMinesAndDots = false;
                     finalMap[lineCounter][i] = columnsInLine[i];
                 }
                 
