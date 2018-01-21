@@ -18,10 +18,10 @@ public class MinesSearcher {
                 if (isFirstTime) {
                     arraySize = line.split(" ");
                     finalMap = new String[Integer.valueOf(arraySize[0])][Integer.valueOf(arraySize[1])];
-                    isFirstTime= false;
+                    isFirstTime = false;
                     continue;
                 }
-                
+
                 String[] columnsInLine = line.split("");
                 for (int i = 0; i < columnsInLine.length; i++) {
                     if ("*".equals(columnsInLine[i]))
@@ -30,41 +30,46 @@ public class MinesSearcher {
                         finalMap[lineCounter][i] = "0";
                     else
                         isValidMatrix = false;
-                    
+
                 }
-                
+
                 lineCounter++;
             }
-            
+
             in.close();
-            
+
             Integer rowsNumber = Integer.valueOf(arraySize[0]);
             Integer columnsNumber = Integer.valueOf(arraySize[1]);
-            
+
             for (int i = 0; i < rowsNumber; i++) {
                 for (int j = 0; j < columnsNumber; j++) {
                     if ("0".equals(finalMap[i][j])) {
-                        //Mina Derecha
+                        // Mina Derecha
                         if ((j + 1) < columnsNumber) {
-                            if("*".equals(finalMap[i][j + 1])) {
+                            if ("*".equals(finalMap[i][j + 1])) {
                                 finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
                             }
                         }
-                        //Mina Izquierda
+                        // Mina Izquierda
                         if ((j - 1) > -1) {
-                            if("*".equals(finalMap[i][j - 1])) {
+                            if ("*".equals(finalMap[i][j - 1])) {
+                                finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
+                            }
+                        }
+                        // Mina Arriba
+                        if ((i + 1) < rowsNumber) {
+                            if ("*".equals(finalMap[i + 1][j])) {
                                 finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
                             }
                         }
                         continue;
                     }
-                    
-                    
+
                 }
             }
-            
+
             return finalMap;
-            
+
         } catch (Exception e) {
             return finalMap;
         }

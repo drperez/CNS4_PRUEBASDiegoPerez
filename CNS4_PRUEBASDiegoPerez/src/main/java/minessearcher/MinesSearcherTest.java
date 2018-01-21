@@ -43,12 +43,12 @@ public class MinesSearcherTest {
     }
     
     @Test
-    public void testRightAndLeftMine() {
+    public void testRightAndLeftAndDownMine() {
         String entryFile = "D:\\prueba1.txt";
         String[][] finalMap = minesSearcher.processMinesSearcher(entryFile);
         Assert.assertNotEquals(null, finalMap);
         Assert.assertEquals("*", finalMap[0][0]);
-        Assert.assertEquals("1", finalMap[0][1]);
+        Assert.assertEquals("2", finalMap[0][1]);
         Assert.assertEquals("0", finalMap[0][2]);
         Assert.assertEquals("0", finalMap[0][3]);
         Assert.assertEquals("1", finalMap[1][0]);
