@@ -56,9 +56,15 @@ public class MinesSearcher {
                                 finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
                             }
                         }
-                        // Mina Arriba
+                        // Mina Abajo
                         if ((i + 1) < rowsNumber) {
                             if ("*".equals(finalMap[i + 1][j])) {
+                                finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
+                            }
+                        }
+                        // Mina Arriba
+                        if ((i - 1) > -1) {
+                            if ("*".equals(finalMap[i - 1][j])) {
                                 finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
                             }
                         }
