@@ -35,7 +35,26 @@ public class MinesSearcher {
                 
                 lineCounter++;
             }
+            
             in.close();
+            
+            Integer rowsNumber = Integer.valueOf(arraySize[0]);
+            Integer columnsNumber = Integer.valueOf(arraySize[1]);
+            
+            for (int i = 0; i < rowsNumber; i++) {
+                for (int j = 0; j < columnsNumber; j++) {
+                    if ("0".equals(finalMap[i][j])) {
+                        if ((j + 1) < columnsNumber) {
+                            if("*".equals(finalMap[i][j + 1])) {
+                                finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
+                            }
+                        }
+                        continue;
+                    }
+                    
+                    
+                }
+            }
             
             return finalMap;
             
