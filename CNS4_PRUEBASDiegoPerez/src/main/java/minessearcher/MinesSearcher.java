@@ -61,11 +61,38 @@ public class MinesSearcher {
                             if ("*".equals(finalMap[i + 1][j])) {
                                 finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
                             }
+                            
+                            // Mina Abajo/Derecha
+                            if ((j + 1) < columnsNumber) {
+                                if ("*".equals(finalMap[i + 1][j + 1])) {
+                                    finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
+                                }
+                            }
+                            // Mina Abajo/Izquierda
+                            if ((j - 1) > -1) {
+                                if ("*".equals(finalMap[i + 1][j - 1])) {
+                                    finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
+                                }
+                            }
+                            
                         }
                         // Mina Arriba
                         if ((i - 1) > -1) {
                             if ("*".equals(finalMap[i - 1][j])) {
                                 finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
+                            }
+                            
+                            // Mina Arriba/Derecha
+                            if ((j + 1) < columnsNumber) {
+                                if ("*".equals(finalMap[i - 1][j + 1])) {
+                                    finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
+                                }
+                            }
+                            // Mina Arriba/Izquierda
+                            if ((j - 1) > -1) {
+                                if ("*".equals(finalMap[i - 1][j - 1])) {
+                                    finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
+                                }
                             }
                         }
                         continue;
