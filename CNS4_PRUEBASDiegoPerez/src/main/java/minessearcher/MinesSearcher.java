@@ -44,8 +44,15 @@ public class MinesSearcher {
             for (int i = 0; i < rowsNumber; i++) {
                 for (int j = 0; j < columnsNumber; j++) {
                     if ("0".equals(finalMap[i][j])) {
+                        //Mina Derecha
                         if ((j + 1) < columnsNumber) {
                             if("*".equals(finalMap[i][j + 1])) {
+                                finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
+                            }
+                        }
+                        //Mina Izquierda
+                        if ((j - 1) > -1) {
+                            if("*".equals(finalMap[i][j - 1])) {
                                 finalMap[i][j] = String.valueOf((Integer.valueOf(finalMap[i][j]) + 1));
                             }
                         }
