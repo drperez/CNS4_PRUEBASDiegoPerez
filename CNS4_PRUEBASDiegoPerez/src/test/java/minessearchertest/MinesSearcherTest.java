@@ -1,7 +1,9 @@
-package minessearcher;
+package minessearchertest;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import minessearcher.MinesSearcher;
 
 public class MinesSearcherTest {
 
